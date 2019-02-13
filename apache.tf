@@ -1,6 +1,8 @@
 
 resource "null_resource" "apache" {
 
+    depends_on = ["packet_device.webservers"]
+
     count = "${var.webserver_count}"
 
     connection {

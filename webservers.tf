@@ -3,6 +3,9 @@ variable "hostname" {
 }
 
 resource "packet_device" "webservers" {
+
+  depends_on       = ["packet_ssh_key.host_key"]
+
   project_id       = "${var.packet_project_id}"
   facility         = "${var.facility}"
   plan             = "${var.webserver_plan}"
