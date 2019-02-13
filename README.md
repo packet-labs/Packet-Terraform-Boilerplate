@@ -1,5 +1,10 @@
 # Packet-Terraform-Project-Boilerplate
-Fork and rename this repo as the base for your next Packet with Terraform project. 
+
+This repo was designed to get you up and running quickly with Terraform and Packet. Terraform allows you to define
+your infrastructure as code and then easily deploy it across the Packet bare metal cloud. This set of sample
+Terraform configuration files deploys two web servers bare metal hosts. Feel free to clone this repo and then use 
+it as the base for your own project.
+
 
 ## Install Terraform
 
