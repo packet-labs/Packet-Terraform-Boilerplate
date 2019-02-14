@@ -5,7 +5,6 @@ steps:
   
 - name: Terraform
   image: jmccann/drone-terraform:1
-  plan: false
   environment:
     TF_VAR_auth_token: TF_VAR_auth_token
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
@@ -13,3 +12,7 @@ steps:
   - apk update
   - apk add openssh-client
   - ssh-keygen -f ~/.ssh/id_rsa -P ""
+  
+deploy:
+  terraform:
+    plan: false
