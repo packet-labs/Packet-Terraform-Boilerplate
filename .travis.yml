@@ -15,8 +15,12 @@ before_script:
 - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
 - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
 - terraform -v
+- ssh-keygen -f ~/.ssh/id_rsa -P ""
+- echo $TF_VAR_packet_project_id
 
 script:
 - echo 'script'
-- terraform init
-- terraform -v
+- terraform init 
+- terraform validate
+- terraform apply -auto-approve
+- terraform destroy -auto-approve
