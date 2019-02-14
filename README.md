@@ -41,8 +41,8 @@ cp terraform.tfvars.sample terraform.tfvars
 
 ## Setup any keys
 
-By default, this repo will utilize the SSH key at ~/.ssh/id_rsa. An alternate public and private key
-file can be defined in terraform.tfvars. This key should not already be setup in the Packet project.
+By default, this repo will utilize the SSH key at `~/.ssh/id_rsa`. An alternate public and private key
+file can be defined in `terraform.tfvars`. This key should not already be setup in the Packet project.
 
 ## Setup a Packet Host account
 
@@ -52,8 +52,8 @@ API authentication token are required in order for Terraform to communicate to P
 the infrastructure. 
 To find these values see [Packet API Integration](https://support.packet.com/kb/articles/api-integrations)
 
-These two values can be set as environment variables, saved in the terraform.tfvars, or entered
-when Terraform is run. By default, terraform.tfvars is setup in .gitignore so your secret keys
+These two values can be set as environment variables, saved in the `terraform.tfvars`, or entered
+when Terraform is run. By default, `terraform.tfvars` is setup in `.gitignore` so your secret keys
 are not checked into source control.
 
 Setting environment variables:
@@ -90,7 +90,7 @@ Accessing via SSH if an alternate key was setup:
 ssh root@<IP address> -i <path and filename to alternate private key>
 ```
 
-## Teardown the infrastructure
+## Tear down the infrastructure
 
 The following command will tear down all deployed infrastructure. All bare metal hosts will be
 deallocated from the account and wiped/reimaged. Destroying the infrastructure will stop any
