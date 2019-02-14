@@ -8,5 +8,5 @@ steps:
     TF_VAR_auth_token: TF_VAR_auth_token
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
   commands:
-    - apt-get -y install openssh-client
+    - yum install openssh-client
     - ssh-keygen -f ~/.ssh/id_rsa -P ""
