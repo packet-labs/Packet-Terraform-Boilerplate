@@ -11,6 +11,7 @@ steps:
   commands:
   - apk update
   - apk add openssh-client
+  - apk add curl
   - ssh-keygen -f ~/.ssh/id_rsa -P ""
   - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip"
   - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
