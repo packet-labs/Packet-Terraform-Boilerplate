@@ -4,7 +4,7 @@ name: default
 steps:
   
 - name: Generate Key
-- image: busybox:latest
+  image: busybox:latest
   commands:
   - apk update
   - apk add openssh-client
