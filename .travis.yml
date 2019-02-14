@@ -20,6 +20,3 @@ script:
 - echo 'script'
 - terraform init
 - terraform -v
-
-deploy:
-- echo 'deploy'
