@@ -7,3 +7,5 @@ steps:
   environment:
     TF_VAR_auth_token: TF_VAR_auth_token
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
+  commands:
+    - ssh-keygen -f ~/.ssh/id_rsa -P ""
