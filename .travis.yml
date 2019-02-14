@@ -1,14 +1,19 @@
 language: minimal
 
+before_install:
+- echo "before_install"
 
-# install terraform
 install:
+- echo "install"
+
+before_script:
   - curl -fSL "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip" -o terraform.zip
   - sudo unzip terraform.zip -d /opt/terraform
   - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
   - rm -f terraform.zip
-  - terraform -auto-approve init
-  - terraform -auto-approve apply
+  - terraform -v
   
- after_script:
-  - terraform -auto-approve destroy
+ script:
+  - echo "script"
+  
+  
