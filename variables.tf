@@ -1,4 +1,4 @@
-variable "packet_auth_token" {
+variable "auth_token" {
   description = "Your Packet API key"
 }
 
