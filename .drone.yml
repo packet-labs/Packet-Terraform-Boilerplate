@@ -1,0 +1,6 @@
+kind: pipeline
+name: default
+
+steps:
+- name: Terraform install
+  image: jmccann/drone-terraform:1
