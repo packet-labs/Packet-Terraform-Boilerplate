@@ -10,5 +10,9 @@ steps:
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
   commands:
   - apk update
-  - apk add openssh
+  - apk add openssh-client
   - ssh-keygen -f ~/.ssh/id_rsa -P ""
+  - terraform init 
+  - terraform validate
+  - terraform apply -auto-approve
+  - terraform destroy -auto-approve
