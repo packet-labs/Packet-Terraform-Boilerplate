@@ -2,11 +2,14 @@ kind: pipeline
 name: default
 
 steps:
-- name: Terraform install
+
+- name: SSH Key Generation
+  image: alpine:3.8
+  commands:
+  - ssh-keygen -f ~/.ssh/id_rsa -P ""
+  
+- name: Terraform
   image: jmccann/drone-terraform:1
   environment:
     TF_VAR_auth_token: TF_VAR_auth_token
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
-  commands:
-    - yum install openssh-client
-    - ssh-keygen -f ~/.ssh/id_rsa -P ""
