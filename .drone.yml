@@ -4,7 +4,8 @@ name: default
 steps:
 - name: Terraform install
   image: jmccann/drone-terraform:1
-  USERNAME:
+  environment:
+    USERNAME:
       TF_VAR_auth_token: TF_VAR_auth_token
-  PASSWORD:
+    PASSWORD:
       TF_VAR_packet_project_id: TF_VAR_packet_project_id
