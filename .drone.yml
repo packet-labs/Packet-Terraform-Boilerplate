@@ -4,9 +4,6 @@ name: default
 steps:
   
 - name: Generate Key
-  environment:
-    TF_VAR_auth_token: TF_VAR_auth_token
-    TF_VAR_packet_project_id: TF_VAR_packet_project_id
   commands:
   - apk update
   - apk add openssh-client
@@ -23,6 +20,7 @@ steps:
   environment:
     TF_VAR_auth_token: TF_VAR_auth_token
     TF_VAR_packet_project_id: TF_VAR_packet_project_id
+  commands:
   - terraform init 
   - terraform validate
   - terraform apply -auto-approve
