@@ -3,7 +3,7 @@ name: default
 
 steps:
   
-- name: Generate Key
+- name: Deploy
   image: alpine
   environment:
     TF_VAR_auth_token: TF_VAR_auth_token
