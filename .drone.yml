@@ -11,13 +11,15 @@ steps:
   commands:
   - apk update
   - apk add openssh-client
-  - ssh-keygen -f id_rsa -P ""
+  - ssh-keygen -f drone-id_rsa -P ""
+  - ls -l drone-id_rsa*
   - apk add curl
   - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip"
   - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
   - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
   - terraform -v
   - terraform init 
+  - ls -l drone-id_rsa*
   - terraform validate -var-file="terraform.tfvars.drone"
   - terraform apply -var-file="terraform.tfvars.drone" -auto-approve
   - terraform destroy -var-file="terraform.tfvars.drone" -auto-approve
