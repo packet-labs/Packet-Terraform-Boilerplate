@@ -8,7 +8,7 @@ resource "null_resource" "apache" {
     connection {
         type = "ssh"
         host = "${element(packet_device.webservers.*.access_public_ipv4,count.index)}"
-        private_key = "${file("~/.ssh/id_rsa")}"
+        private_key = "${file("${var.private_key_filename}")}"
         agent = false
     }
 

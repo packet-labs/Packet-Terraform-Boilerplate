@@ -6,17 +6,21 @@ steps:
 - name: Deploy
   image: alpine
   environment:
-    TF_VAR_auth_token: TF_VAR_auth_token
-    TF_VAR_packet_project_id: TF_VAR_packet_project_id
+    TF_VAR_auth_token:
+      from_secret: TF_VAR_auth_token
+    TF_VAR_packet_project_id:
+      from_secret: TF_VAR_packet_project_id
   commands:
   - apk update
   - apk add openssh-client
+  - ssh-keygen -f drone-id_rsa -P ""
   - apk add curl
-  - ssh-keygen -f ~/.ssh/id_rsa -P ""
   - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip"
   - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
   - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
+  - terraform -v
   - terraform init 
+  - ln -s terraform.tfvars.drone terraform.tfvars
   - terraform validate
   - terraform apply -auto-approve
   - terraform destroy -auto-approve
