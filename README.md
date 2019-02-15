@@ -44,6 +44,33 @@ cp terraform.tfvars.sample terraform.tfvars
 By default, this repo will utilize the SSH key at `~/.ssh/id_rsa`. An alternate public and private key
 file can be defined in `terraform.tfvars`. This key should not already be setup in the Packet project.
 
+### Existing Packet Keys
+
+If you try to use a key that has already been uploaded to Packet, you will get this error:
+
+```
+Error: Error applying plan:
+1 error(s) occurred:
+* packet_ssh_key.host_key: 1 error(s) occurred:
+* packet_ssh_key.host_key: Key already exists
+```
+
+If your keys are already uploaded in Terraform, it is recommended that you setup an alternate set of keys
+for use with this repo. You can continue to use existing keys in conjunction with the new keys.
+
+```bash
+ssh-keygen -f webserver-id_rsa -P ""
+```
+
+Then update `terraform.tfvars` with the following lines:
+
+```
+public_key_filename = "./webserver-id_rsa.pub"
+private_key_filename = "./webserver-id_rsa"
+```
+
+This will upload the new key and your existing key will be uploaded as well.
+
 ## Setup a Packet Host account
 
 The bare metal hosts will be deployed across the Packet bare metal cloud. This requires an account
