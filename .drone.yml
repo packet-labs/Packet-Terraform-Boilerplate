@@ -6,8 +6,10 @@ steps:
 - name: Deploy
   image: alpine
   environment:
-    TF_VAR_auth_token: TF_VAR_auth_token
-    TF_VAR_packet_project_id: TF_VAR_packet_project_id
+    TF_VAR_auth_token:
+      from_secret: TF_VAR_auth_token
+    TF_VAR_packet_project_id:
+      from_secret: TF_VAR_packet_project_id
   commands:
   - apk update
   - apk add openssh-client
