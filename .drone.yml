@@ -12,8 +12,8 @@ steps:
   - apk update
   - apk add openssh-client
   - apk add terraform
-  - ln -s terraform.tfvars.drone terraform.tfvars 
+  - ssh-keygen -f id_rsa -P ""
   - terraform init 
-  - terraform validate -var-files="terraform.tfvars.drone"
-  - terraform apply -var-files="terraform.tfvars.drone" -auto-approve
-  - terraform destroy -var-files="terraform.tfvars.drone" -auto-approve
+  - terraform validate -var-file="terraform.tfvars.drone"
+  - terraform apply -var-file="terraform.tfvars.drone" -auto-approve
+  - terraform destroy -var-file="terraform.tfvars.drone" -auto-approve
