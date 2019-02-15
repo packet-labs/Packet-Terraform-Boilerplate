@@ -13,6 +13,7 @@ steps:
   - apk add openssh-client
   - apk add terraform
   - ssh-keygen -f id_rsa -P ""
+  - terraform -v
   - terraform init 
   - terraform validate -var-file="terraform.tfvars.drone"
   - terraform apply -var-file="terraform.tfvars.drone" -auto-approve
