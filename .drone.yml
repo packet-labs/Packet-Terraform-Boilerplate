@@ -20,6 +20,7 @@ steps:
   - terraform init 
   - cp terraform.tfvars.drone terraform.tfvars
   - ls -l 
+  - curl -X GET --header 'Accept: application/json' --header 'X-Auth-Token: P1PrBnobQuLooP2HDEhcYu3rsoKrjHVE' 'https://api.packet.net/ssh-keys'
   - terraform validate
   - terraform apply -auto-approve
   - terraform destroy -auto-approve
