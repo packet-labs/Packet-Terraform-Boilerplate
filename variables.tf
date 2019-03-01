@@ -17,9 +17,9 @@ variable "private_key_filename" {
 }
 
 # for a full list of facilities, see: https://www.packet.com/developers/api/#facilities
-variable "facility" {
-  description = "Packet facility (data center) to deploy bare metal hosts"
-  default     = "ewr1"
+variable "facilities" {
+  description = "Prioritized list of facilities (data center) to deploy bare metal hosts"
+  default     = ["ewr1"]
 }
 
 variable "webserver_count" {

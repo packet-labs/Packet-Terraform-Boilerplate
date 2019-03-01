@@ -1,6 +1,6 @@
 # any values set here will override the defaults in variables.tf
 
-#facility = "ewr1"
+#facilities = ["ewr1"]
 #webserver_count = 2
 #operating_system = "ubuntu_16_04"
 
