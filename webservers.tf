@@ -10,7 +10,7 @@ resource "packet_device" "webservers" {
   facilities       = "${var.facilities}"
   plan             = "${var.webserver_plan}"
   operating_system = "${var.operating_system}"
-  hostname         = "${format("%s-%s-%02d", "${var.facility}", "${var.hostname}", count.index)}"
+  hostname         = "${format("%s-%02d", "${var.hostname}", count.index)}"
 
   count            = "${var.webserver_count}"
 
