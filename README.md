@@ -7,7 +7,7 @@ it as the base for your own project.
 
 # Status
 
-CI Build Status (Master): [![Build Status](https://cloud.drone.io/api/badges/johnstudarus/Packet-Terraform-Project-Boilerplate/status.svg?branch=master)](https://cloud.drone.io/johnstudarus/Packet-Terraform-Project-Boilerplate/?branch=master)
+CI Build Status (Master): [![Build Status](https://cloud.drone.io/api/badges/packet-labs/Packet-Terraform-Project-Boilerplate/status.svg?branch=master)](https://cloud.drone.io/packet-labs/Packet-Terraform-Project-Boilerplate/?branch=master)
 
 
 ## Install Terraform
