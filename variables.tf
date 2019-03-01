@@ -37,3 +37,7 @@ variable "operating_system" {
   default     = "ubuntu_16_04"
 }
 
+variable "build" {
+  description = "Build number which is added as a tag to hosts"
+  default     = ""
+}

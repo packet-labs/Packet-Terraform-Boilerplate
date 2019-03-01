@@ -15,7 +15,7 @@ resource "packet_device" "webservers" {
   count            = "${var.webserver_count}"
 
   billing_cycle    = "hourly"
-  tags             = ["webserver"]
+  tags             = ["${var.build}","webserver"]
 
   connection {
     user        = "root"
