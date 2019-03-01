@@ -7,7 +7,7 @@ resource "packet_device" "webservers" {
   depends_on       = ["packet_ssh_key.host_key"]
 
   project_id       = "${var.packet_project_id}"
-  facility         = "${var.facilities}"
+  facilities       = "${var.facilities}"
   plan             = "${var.webserver_plan}"
   operating_system = "${var.operating_system}"
   hostname         = "${format("%s-%s-%02d", "${var.facility}", "${var.hostname}", count.index)}"
