@@ -22,5 +22,5 @@ steps:
   - terraform init 
   - ln -s terraform.tfvars.drone terraform.tfvars
   - terraform validate
-  - terraform apply -auto-approve
+  - terraform apply -auto-approve -var="drone_build_number=$DRONE_BUILD_NUMBER"
   - terraform destroy -auto-approve
