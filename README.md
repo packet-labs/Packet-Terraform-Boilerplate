@@ -5,6 +5,10 @@ your infrastructure as code and then easily deploy it across the Packet bare met
 Terraform configuration files deploys two web servers bare metal hosts. Feel free to clone this repo and then use 
 it as the base for your own project.
 
+# Status
+
+CI Build Status: https://cloud.drone.io/api/badges/johnstudarus/Packet-Terraform-Project-Boilerplate/status.svg
+
 
 ## Install Terraform
 
